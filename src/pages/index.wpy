@@ -1,0 +1,34 @@
+<style lang="less">
+  .hello{}
+</style>
+<template>
+    <Uploader />
+</template>
+
+<script>
+  import wepy from 'wepy';
+  import Uploader from '../components/index';
+
+  export default class extends wepy.page {
+
+    config = {
+      navigationBarTitleText: 'wepy-flexbox-grid demo'
+    }
+
+    components = {
+      Uploader
+    }
+
+    data = {
+    }
+
+    computed = {
+      now () {
+        return +new Date()
+      }
+    }
+
+    methods = {
+    }
+  }
+</script>

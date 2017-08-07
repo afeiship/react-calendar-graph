@@ -1,0 +1,54 @@
+<style lang='scss'>
+  @import './index';
+</style>
+
+<template>
+  <view class="row row-center row-wrap row-justify-space-between choose-uploader">
+    <repeat for="{{items}}" key="index" index="index" item="item">
+      <Removeable src="item" @remove.user="onRemove" />
+    </repeat>
+    <view class="uploader {{ className}}" @tap="onAdd">
+      <text class="iconfont icon-zengjia"></text>
+    </view>
+  </view>
+</template>
+
+
+<script>
+  import wepy from 'wepy';
+  import Removeable from 'wepy-removeable';
+
+
+  export default class extends wepy.component {
+    props = {
+      limit: {
+        type: Number,
+        default: 9
+      },
+      items: {
+        type: String,
+        default: [
+          'http://placeholder.qiniudn.com/160',
+          'http://placeholder.qiniudn.com/180',
+          'http://placeholder.qiniudn.com/60',
+          'http://placeholder.qiniudn.com/80',
+        ]
+      }
+    }
+
+    methods = {
+      onAdd(){
+        this.$emit('add');
+      },
+      onRemove(e){
+        this.items.splice(+e.source.$index,1);
+        this.$emit('remove');
+      }
+    }
+
+    components = {
+      Removeable
+    }
+  }
+</script>
+

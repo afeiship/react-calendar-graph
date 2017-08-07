@@ -1,0 +1,45 @@
+{
+  "name": "wepy-uploader",
+  "version": "0.0.1",
+  "description": "Uploader for wechat/weapp based on wepy.",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "gulp clean",
+    "dev": "npm run clean && wepy build --watch",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:afeiship/wepy-uploader.git"
+  },
+  "author": "afei",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^7.2.1",
+    "babel-plugin-syntax-export-extensions": "^6.13.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "cross-env": "^5.0.1",
+    "del": "^3.0.0",
+    "eslint": "^3.18.0",
+    "eslint-config-standard": "^7.1.0",
+    "eslint-friendly-formatter": "^2.0.7",
+    "eslint-plugin-html": "^2.0.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.5.0",
+    "wepy-compiler-babel": "^1.5.1",
+    "wepy-compiler-less": "^1.3.10",
+    "wepy-compiler-sass": "^1.3.7",
+    "wepy-eslint": "^1.5.2"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "wepy": "^1.5.7",
+    "wepy-async-function": "^1.4.4",
+    "wepy-removeable": "github:afeiship/wepy-removeable"
+  }
+}
