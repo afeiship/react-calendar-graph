@@ -2,7 +2,7 @@
   "name": "wepy-uploader",
   "version": "0.0.1",
   "description": "Uploader for wechat/weapp based on wepy.",
-  "main": "dist/index.js",
+  "main": "dist/index.wpy",
   "scripts": {
     "clean": "gulp clean",
     "dev": "npm run clean && wepy build --watch",
