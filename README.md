@@ -1,2 +1,7 @@
-# wepy-uploader
-> Uploader for wechat/weapp based on wepy.
+# docker-aws
+> Docker for aws cli.
+
+## usage
+```shell
+docker exec -ti aws_cli aws --version
+```

@@ -1,0 +1,8 @@
+# https://github.com/cgswong/docker-aws
+version: "3"
+services:
+  aws:
+    image: 'cgswong/aws:latest'
+    container_name: aws_cli
+    volumes:
+      - ./data/.aws:/root/.aws
