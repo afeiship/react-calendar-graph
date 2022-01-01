@@ -3,6 +3,7 @@
   "boilerplate": "react-calendar-graph",
   "homepage": "https://js.work",
   "version": "1.0.0",
+  "type": "module",
   "description": "Calendar graph like github for react.",
   "license": "MIT",
   "main": "dist/index.js",
