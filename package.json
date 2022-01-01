@@ -83,5 +83,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/afeiship/react-calendar-graph.git"
-  }
+  },
+  "keywords": [
+    "react",
+    "calendar",
+    "graph",
+    "github"
+  ]
 }
