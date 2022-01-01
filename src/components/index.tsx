@@ -62,8 +62,6 @@ export default class ReactCalendarGraph extends Component<ReactCalendarGraphProp
     const { items, graphOptions } = this.props;
     this.svgInstance = new SVGGraph(this.ghRef.current, items, graphOptions);
     setTimeout(() => tooltipInit(this.rootRef.current), 100);
-
-    console.log(this.svgInstance);
   }
 
   shouldComponentUpdate(nextProps: Readonly<ReactCalendarGraphProps>): boolean {
