@@ -24,7 +24,7 @@ npm install -S @jswork/react-calendar-graph
   ```
 2. import js
   ```js
-  import React from 'react';
+  import React, { useEffect, useState } from 'react';
   import ReactCalendarGraph from '@jswork/react-calendar-graph';
   import '../../src/components/style.scss';
   import styled from 'styled-components';
@@ -40,9 +40,15 @@ npm install -S @jswork/react-calendar-graph
   `;
 
   export default () => {
+    const [v, setV] = useState([]);
+    useEffect(() => {
+      setTimeout(() => {
+        setV(data);
+      }, 100);
+    }, []);
     return (
       <Container>
-        <ReactCalendarGraph items={data} />
+        <ReactCalendarGraph items={v} />
       </Container>
     );
   };

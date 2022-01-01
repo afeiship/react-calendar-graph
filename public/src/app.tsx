@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactCalendarGraph from '../../src/main';
 import '../../src/components/style.scss';
 import styled from 'styled-components';
@@ -14,9 +14,15 @@ const Container = styled.div`
 `;
 
 export default () => {
+  const [v, setV] = useState([]);
+  useEffect(() => {
+    setTimeout(() => {
+      setV(data);
+    }, 100);
+  }, []);
   return (
     <Container>
-      <ReactCalendarGraph items={data} />
+      <ReactCalendarGraph items={v} />
     </Container>
   );
 };

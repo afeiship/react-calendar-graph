@@ -50,15 +50,31 @@ export type ReactCalendarGraphProps = {
 export default class ReactCalendarGraph extends Component<ReactCalendarGraphProps> {
   static displayName = CLASS_NAME;
   static version = '__VERSION__';
-  static defaultProps = {};
+  static defaultProps = {
+    items: []
+  };
 
   private rootRef = createRef<HTMLDivElement>();
   private ghRef = createRef<HTMLDivElement>();
+  private svgInstance: any = null;
 
   componentDidMount() {
     const { items, graphOptions } = this.props;
-    new SVGGraph(this.ghRef.current, items, graphOptions);
+    this.svgInstance = new SVGGraph(this.ghRef.current, items, graphOptions);
     setTimeout(() => tooltipInit(this.rootRef.current), 100);
+
+    console.log(this.svgInstance);
+  }
+
+  shouldComponentUpdate(nextProps: Readonly<ReactCalendarGraphProps>): boolean {
+    const { items } = nextProps;
+    if (items !== this.props.items) this.rerender(items);
+    return true;
+  }
+
+  rerender(inData) {
+    this.svgInstance.data = inData;
+    this.svgInstance.render();
   }
 
   render() {
