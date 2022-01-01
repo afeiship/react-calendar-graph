@@ -14,4 +14,7 @@ package-lock.json
 
 # python cache
 __pycache__
-data/.aws
+dist
+dist-ssr
+*.local
+.vite

@@ -9,8 +9,10 @@ build
 gulpfile.js
 rollup.config.js
 
+public
 .editorconfig
 .prettierrc
+.prettierignore
 
 # vscode
 .vscode
@@ -18,3 +20,8 @@ rollup.config.js
 .github
 api
 docs
+
+jest.config.js
+.release-it.json
+tsconfig.json
+vite.config.ts

@@ -1,8 +1,0 @@
-# https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-docker.html
-version: "3"
-services:
-  aws:
-    image: 'amazon/aws-cli'
-    container_name: aws_cli
-    volumes:
-      - ./data/.aws:/root/.aws
