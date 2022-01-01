@@ -2,7 +2,7 @@
   "name": "@jswork/react-calendar-graph",
   "boilerplate": "react-calendar-graph",
   "homepage": "https://js.work",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Calendar graph like github for react.",
   "license": "MIT",
