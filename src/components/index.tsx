@@ -4,7 +4,7 @@ import { SVGGraph } from 'calendar-graph';
 
 const CLASS_NAME = 'react-calendar-graph';
 
-// tobe opmtize
+// todo: tobe optimize
 function tooltipInit(inContext) {
   const tip = inContext.querySelector(`.${CLASS_NAME}__tooltip`) as HTMLDivElement;
   let elems = inContext.getElementsByClassName('cg-day');
@@ -47,11 +47,35 @@ export type ReactCalendarGraphProps = {
   graphOptions?: any;
 };
 
+/*
+From github:
+--color-calendar-graph-day-bg: #ebedf0;
+--color-calendar-graph-day-border: rgba(27, 31, 35, 0.06);
+--color-calendar-graph-day-L1-bg: #9be9a8;
+--color-calendar-graph-day-L2-bg: #40c463;
+--color-calendar-graph-day-L3-bg: #30a14e;
+--color-calendar-graph-day-L4-bg: #216e39;
+ */
+
+const colorAsGithub = (value) => {
+  if (value === 0) return '#ebedf0';
+  if (value < 5) return '#9be9a8';
+  if (value < 10) return '#40c463';
+  if (value < 15) return '#30a14e';
+  return '#216e39';
+};
+
 export default class ReactCalendarGraph extends Component<ReactCalendarGraphProps> {
   static displayName = CLASS_NAME;
   static version = '__VERSION__';
   static defaultProps = {
-    items: []
+    items: [],
+    graphOptions: {
+      colorFun: (v) => {
+        const count = v.count;
+        return colorAsGithub(count);
+      }
+    }
   };
 
   private rootRef = createRef<HTMLDivElement>();
@@ -61,7 +85,7 @@ export default class ReactCalendarGraph extends Component<ReactCalendarGraphProp
   componentDidMount() {
     const { items, graphOptions } = this.props;
     this.svgInstance = new SVGGraph(this.ghRef.current, items, graphOptions);
-    setTimeout(() => tooltipInit(this.rootRef.current), 100);
+    this.renderTooltip();
   }
 
   shouldComponentUpdate(nextProps: Readonly<ReactCalendarGraphProps>): boolean {
@@ -73,6 +97,11 @@ export default class ReactCalendarGraph extends Component<ReactCalendarGraphProp
   rerender(inData) {
     this.svgInstance.data = inData;
     this.svgInstance.render();
+    this.renderTooltip();
+  }
+
+  renderTooltip() {
+    setTimeout(() => tooltipInit(this.rootRef.current), 100);
   }
 
   render() {
