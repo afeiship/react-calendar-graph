@@ -3,15 +3,13 @@
     "requireCleanWorkingDir": false
   },
   "hooks": {
-    "after:init": [
-      "t2k",
-      "npm run docs"
-    ],
-    "after:bump": [
-      "npm run build"
-    ]
+    "before:init": ["npm run docs"],
+    "after:init": ["t2k"],
+    "after:bump": ["npm run build"],
+    "after:release": ["npm pkg get name | cnpm sync"]
   },
   "github": {
-    "release": true
+    "release": true,
+    "proxy": "http://127.0.0.1:9090"
   }
 }

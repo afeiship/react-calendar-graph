@@ -1,6 +1,7 @@
-import fs from 'fs';
-import indentString from 'indent-string';
-import '@jswork/next-replace-in-file';
+const fs = require('fs');
+const indentString = require('indent-string');
+
+require('@jswork/next-replace-in-file');
 
 nx.declare({
   statics: {
@@ -12,14 +13,14 @@ nx.declare({
   },
   methods: {
     reset: function () {
-      fs.copyFileSync('./build/TEMPLATE.md', './README.md');
+      fs.copyFileSync('./scripts/TEMPLATE.md', './README.md');
     },
     replace: function () {
       const docApp = fs.readFileSync('./public/src/app.tsx').toString();
 
       nx.replaceInFile('README.md', [
         ['__GENERATE_DAPP__', indentString(docApp, 2)],
-        ['../../src/main', '@jswork/react-calendar-graph']
+        ['@/main', '@jswork/react-calendar-graph']
       ]);
     }
   }

@@ -25,7 +25,7 @@ npm install -S @jswork/react-calendar-graph
 2. import js
   ```js
   import React, { useEffect, useState } from 'react';
-  import ReactCalendarGraph from '@jswork/react-calendar-graph';
+  import ReactCalendarGraph from '../../src/main';
   import '../../src/components/style.scss';
   import styled from 'styled-components';
 
