@@ -1,7 +1,7 @@
 {
   "name": "@jswork/react-calendar-graph",
   "homepage": "https://js.work",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Calendar graph like github for react.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -76,5 +76,11 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
-  }
+  },
+  "keywords": [
+    "react",
+    "calendar",
+    "graph",
+    "github"
+  ]
 }
