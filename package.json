@@ -1,7 +1,7 @@
 {
   "name": "@jswork/react-calendar-graph",
   "homepage": "https://js.work",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Calendar graph like github for react.",
   "license": "MIT",
   "main": "dist/index.js",

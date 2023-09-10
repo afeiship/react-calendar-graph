@@ -36,6 +36,7 @@ npm install -S @jswork/react-calendar-graph
     width: 80%;
     margin: 30px auto 0;
     .react-calendar-graph {
+      width: 90%;
     }
   `;
 
