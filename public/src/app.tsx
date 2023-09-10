@@ -10,6 +10,7 @@ const Container = styled.div`
   width: 80%;
   margin: 30px auto 0;
   .react-calendar-graph {
+    width: 90%;
   }
 `;
 
