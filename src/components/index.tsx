@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { Component } from 'react';
-import { Tooltip as ReactTooltip } from 'react-tooltip';
+import Tippy from '@tippyjs/react';
 import ActivityCalendar, { ThemeInput } from 'react-activity-calendar';
 import { standardCalendar } from './helper';
 
@@ -51,10 +51,7 @@ export default class ReactCalendarGraph extends Component<ReactCalendarGraphProp
   }
 
   renderBlock = (block, activity) => {
-    return React.cloneElement(block, {
-      'data-tooltip-id': 'react-tooltip',
-      'data-tooltip-html': `${activity.count} activities on ${activity.date}`
-    });
+    return <Tippy content={`${activity.count} activities on ${activity.date}`}>{block}</Tippy>;
   };
 
   render() {
@@ -67,7 +64,6 @@ export default class ReactCalendarGraph extends Component<ReactCalendarGraphProp
           renderBlock={this.renderBlock}
           {...graphOptions}
         />
-        <ReactTooltip id="react-tooltip" />
       </section>
     );
   }
