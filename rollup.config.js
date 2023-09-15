@@ -18,8 +18,8 @@ export default [
       file: pkg.main,
       format: 'umd',
       exports: 'named',
-      sourcemap: false,
-      name: 'ReactCalendarGraphComponent',
+      sourcemap: true,
+      name: 'ReactCalendarGraph',
       globals: {
         '@jswork/noop': 'noop',
         'prop-types': 'PropTypes',
