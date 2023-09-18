@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { Component } from 'react';
 import Tippy from '@tippyjs/react';
-import ActivityCalendar, { ThemeInput } from 'react-activity-calendar';
+import ActivityCalendar, { ThemeInput, Props, Activity } from 'react-activity-calendar';
 import { standardCalendar } from './helper';
 
 const CLASS_NAME = 'react-calendar-graph';
@@ -20,11 +20,11 @@ export type ReactCalendarGraphProps = {
   /**
    * The data source.
    */
-  items?: any[];
+  data?: any[];
   /**
    * The calendar-graph instance options.
    */
-  graphOptions?: any;
+  options?: Omit<Props, 'data'>
 };
 
 /*
@@ -40,14 +40,18 @@ From github:
 export default class ReactCalendarGraph extends Component<ReactCalendarGraphProps> {
   static displayName = CLASS_NAME;
   static version = '__VERSION__';
-  static defaultProps = {
-    items: [],
-    graphOptions: {}
+  static defaultProps: ReactCalendarGraphProps = {
+    data: [],
+    options: {
+      showWeekdayLabels: true,
+      hideTotalCount:true,
+      hideColorLegend:true,
+    }
   };
 
   get data() {
-    const { items } = this.props;
-    return standardCalendar(items);
+    const { data } = this.props;
+    return standardCalendar(data);
   }
 
   renderBlock = (block, activity) => {
@@ -55,14 +59,14 @@ export default class ReactCalendarGraph extends Component<ReactCalendarGraphProp
   };
 
   render() {
-    const { className, items, graphOptions, ...props } = this.props;
+    const { className, data, options, ...props } = this.props;
     return (
       <section data-component={CLASS_NAME} className={classNames(CLASS_NAME, className)} {...props}>
         <ActivityCalendar
-          data={this.data as any}
+          data={this.data as Activity[]}
           theme={DEFAULT_THEME}
           renderBlock={this.renderBlock}
-          {...graphOptions}
+          {...options}
         />
       </section>
     );

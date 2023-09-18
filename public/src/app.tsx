@@ -23,7 +23,7 @@ export default () => {
   }, []);
   return (
     <Container>
-      <ReactCalendarGraph items={v} />
+      <ReactCalendarGraph data={v} />
     </Container>
   );
 };
