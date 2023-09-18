@@ -49,7 +49,7 @@ npm install -S @jswork/react-calendar-graph
     }, []);
     return (
       <Container>
-        <ReactCalendarGraph items={v} />
+        <ReactCalendarGraph data={v} />
       </Container>
     );
   };
