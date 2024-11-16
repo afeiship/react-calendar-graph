@@ -17,7 +17,9 @@ function App() {
       <div className="badge badge-warning absolute right-0 top-0 m-4">
         Build Time: {BUILD_TIME}
       </div>
-      <ReactCalendarGraph data={v} />
+      <div className="text-center">
+        <ReactCalendarGraph data={v} />
+      </div>
     </div>
   );
 }
