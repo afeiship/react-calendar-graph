@@ -7,11 +7,12 @@ import styled from 'styled-components';
 import data from './data.json';
 
 const Container = styled.div`
-  width: 80%;
-  margin: 30px auto 0;
-  .react-calendar-graph {
-    width: 90%;
-  }
+    width: 80%;
+    margin: 30px auto 0;
+
+    .react-calendar-graph {
+        width: 90%;
+    }
 `;
 
 export default () => {

@@ -44,8 +44,8 @@ export default class ReactCalendarGraph extends Component<ReactCalendarGraphProp
     data: [],
     options: {
       showWeekdayLabels: true,
-      hideTotalCount:true,
-      hideColorLegend:true,
+      hideTotalCount: true,
+      hideColorLegend: true
     }
   };
 
@@ -60,6 +60,8 @@ export default class ReactCalendarGraph extends Component<ReactCalendarGraphProp
 
   render() {
     const { className, data, options, ...props } = this.props;
+    if (!data?.length) return null;
+
     return (
       <section data-component={CLASS_NAME} className={classNames(CLASS_NAME, className)} {...props}>
         <ActivityCalendar
