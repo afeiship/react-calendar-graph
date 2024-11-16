@@ -1,7 +1,15 @@
 @import 'tippy.js/dist/tippy.css';
 
-.react-calendar-graph {
+.react-activity-calendar {
   display: inline-block;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
   'Noto Sans', sans-serif;
+  &__scroll-container{
+    overflow: visible !important;
+  }
+  svg {
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: border-box;
+  }
 }

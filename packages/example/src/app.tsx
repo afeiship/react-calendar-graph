@@ -18,7 +18,14 @@ function App() {
         Build Time: {BUILD_TIME}
       </div>
       <div className="text-center">
-        <ReactCalendarGraph data={v} />
+        <ReactCalendarGraph
+          data={v}
+          style={{
+            padding: '10px',
+            background: 'white',
+            borderRadius: '5px',
+          }}
+        />
       </div>
     </div>
   );
